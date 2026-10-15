@@ -270,8 +270,16 @@ footer{
   padding:35px 20px;
   font-size:11px;
   color:var(--muted);
+}.mobile-photo {
+  display: none;
 }
-@media(max-width:760px){
+@media(max-width:760px)
+  .mobile-photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: url("mainphoto.png") center center / cover no-repeat;
+}{
   header{padding:18px 20px}
   .logo{font-size:19px}
   nav{gap:13px}
@@ -281,14 +289,8 @@ footer{
     gap:30px;
     padding:65px 23px 75px;
   }
-  .hero{
-  background:
-    linear-gradient(
-      rgba(249,248,243,.40),
-      rgba(249,248,243,.55)
-    ),
-    url("mainphoto.png")
-    center center/cover no-repeat;
+  .hero {
+  background: var(--cream);
 }
   }
   h1{font-size:32px}
