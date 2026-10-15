@@ -370,11 +370,11 @@ footer{
       <p>気になるテーマから、価値観の違いを楽しもう。</p>
     </div>
     <div class="category-list">
-      <span>恋愛・結婚</span>
-      <span>仕事・職場</span>
-      <span>お金・買い物</span>
-      <span>友達・人間関係</span>
-      <span>暮らし・日常</span>
+    <button class="choice" onclick="selectCategory('恋愛・結婚')">恋愛・結婚</button>
+<button class="choice" onclick="selectCategory('仕事・職場')">仕事・職場</button>
+<button class="choice" onclick="selectCategory('お金・買い物')">お金・買い物</button>
+<span>友達・人間関係</span>
+<span>暮らし・日常</span>
     </div>
     <p style="font-size:11px;color:#78837b;margin-top:24px">
       ※ カテゴリー別の質問は今後追加予定です。
@@ -388,59 +388,123 @@ footer{
 </footer>
 
 <script>
-const questions=[
-  {
-    q:"友達との旅行、別行動はあり？",
-    choices:["あり！自由な時間もほしい","なし！せっかくなら一緒がいい"],
-    labels:["あり派","なし派"],
-    results:[62,38]
-  },
-  {
-    q:"仕事の始業時間、何分前に到着したい？",
-    choices:["余裕をもって10分以上前","ギリギリでも間に合えばOK"],
-    labels:["余裕派","ギリギリ派"],
-    results:[55,45]
-  },
-  {
-    q:"恋人との連絡、毎日したい？",
-    choices:["毎日連絡を取りたい","必要なときだけでいい"],
-    labels:["毎日派","必要なとき派"],
-    results:[58,42]
-  },
-  {
-    q:"友達との食事、割り勘は1円単位まで？",
-    choices:["きっちり分けたい","ざっくりでいい"],
-    labels:["きっちり派","ざっくり派"],
-    results:[24,76]
-  }
-];
-let current=0;
-function renderQuestion(){
-  const q=questions[current];
-  document.getElementById("questionText").textContent=q.q;
-  document.getElementById("choices").innerHTML=q.choices.map(
-    (c,i)=>'<button class="choice" onclick="answer('+i+')">○ '+c+'</button>'
-  ).join("");
-  document.getElementById("choices").style.display="block";
-  document.getElementById("result").style.display="none";
+const questions=const questionsByCategory = {
+  "恋愛・結婚": [
+    {
+      q:"恋人とは毎日LINEしたい？",
+      choices:["毎日連絡したい","必要なときだけでいい"],
+      labels:["毎日派","必要なとき派"],
+      results:[58,42]
+    },
+    {
+      q:"デート代は割り勘がいい？",
+      choices:["割り勘がいい","どちらかが多めに払ってもいい"],
+      labels:["割り勘派","柔軟派"],
+      results:[46,54]
+    },
+    {
+      q:"恋人が異性の友達と2人で食事するのはあり？",
+      choices:["あり","なし"],
+      labels:["あり派","なし派"],
+      results:[39,61]
+    }
+  ],
+  "仕事・職場": [
+    {
+      q:"始業時間の何分前に出社する？",
+      choices:["10分以上前","時間に間に合えばOK"],
+      labels:["余裕派","時間ぴったり派"],
+      results:[55,45]
+    },
+    {
+      q:"職場の飲み会、参加したい？",
+      choices:["できれば参加したい","できれば参加したくない"],
+      labels:["参加派","不参加派"],
+      results:[35,65]
+    },
+    {
+      q:"仕事中の雑談はあり？",
+      choices:["適度ならあり","仕事に集中したい"],
+      labels:["雑談あり派","集中派"],
+      results:[67,33]
+    }
+  ],
+  "お金・買い物": [
+    {
+      q:"欲しいものはすぐ買う？",
+      choices:["すぐ買う","一度考えてから買う"],
+      labels:["即決派","慎重派"],
+      results:[32,68]
+    },
+    {
+      q:"友達との食事、割り勘は1円単位まで？",
+      choices:["きっちり分けたい","ざっくりでいい"],
+      labels:["きっちり派","ざっくり派"],
+      results:[24,76]
+    },
+    {
+      q:"貯金より今を楽しみたい？",
+      choices:["今を楽しみたい","将来のために貯めたい"],
+      labels:["今を楽しむ派","貯蓄派"],
+      results:[48,52]
+    }
+  ]
+};
+let current = 0;
+let category = "恋愛・結婚";
+
+function renderQuestion() {
+  const questions = questionsByCategory[category];
+  const q = questions[current];
+
+  document.getElementById("questionText").textContent = q.q;
+
+  document.getElementById("choices").innerHTML =
+    q.choices.map((c, i) =>
+      '<button class="choice" onclick="answer(' + i + ')">○ ' + c + '</button>'
+    ).join("");
+
+  document.getElementById("choices").style.display = "block";
+  document.getElementById("result").style.display = "none";
 }
-function answer(index){
-  const q=questions[current];
-  document.getElementById("selected").textContent=
-    "あなたの回答：「"+q.choices[index]+"」";
-  document.querySelectorAll("#result p")[1].firstChild.textContent=q.labels[0]+"　";
-  document.querySelectorAll("#result p")[2].firstChild.textContent=q.labels[1]+"　";
-  document.getElementById("percentA").textContent=q.results[0]+"%";
-  document.getElementById("percentB").textContent=q.results[1]+"%";
-  document.getElementById("barA").style.width=q.results[0]+"%";
-  document.getElementById("barB").style.width=q.results[1]+"%";
-  document.getElementById("choices").style.display="none";
-  document.getElementById("result").style.display="block";
+
+function answer(index) {
+  const q = questionsByCategory[category][current];
+
+  document.getElementById("selected").textContent =
+    "あなたの回答：「" + q.choices[index] + "」";
+
+  const paragraphs = document.querySelectorAll("#result p");
+  paragraphs[1].firstChild.textContent = q.labels[0] + "　";
+  paragraphs[2].firstChild.textContent = q.labels[1] + "　";
+
+  document.getElementById("percentA").textContent = q.results[0] + "%";
+  document.getElementById("percentB").textContent = q.results[1] + "%";
+
+  document.getElementById("barA").style.width = q.results[0] + "%";
+  document.getElementById("barB").style.width = q.results[1] + "%";
+
+  document.getElementById("choices").style.display = "none";
+  document.getElementById("result").style.display = "block";
 }
-function nextQuestion(){
-  current=(current+1)%questions.length;
+
+function nextQuestion() {
+  const questions = questionsByCategory[category];
+  current = (current + 1) % questions.length;
   renderQuestion();
 }
+
+function selectCategory(name) {
+  category = name;
+  current = 0;
+  renderQuestion();
+  document.getElementById("question").scrollIntoView({
+    behavior: "smooth",
+    block: "center"
+  });
+}
+
+renderQuestion();
 </script>
 </body>
 </html>
