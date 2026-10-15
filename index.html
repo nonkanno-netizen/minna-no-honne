@@ -5,439 +5,442 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>みんなのホンネ｜私の常識は、みんなの非常識？</title>
+<meta name="description" content="みんなのホンネ。あなたの答えと、みんなの答えを比べてみよう。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#f7f5f0;
-  --paper:#fffefa;
-  --ink:#343c3f;
-  --muted:#777f7e;
-  --blue:#617e8d;
-  --sage:#e5eee7;
-  --line:#e5e3dd;
+  --ink:#34423c;
+  --muted:#78837b;
+  --sage:#738d7b;
+  --cream:#f9f8f3;
+  --line:#e6e8df;
 }
 *{box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{
   margin:0;
-  background:var(--bg);
   color:var(--ink);
-  font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
-  line-height:1.7;
+  background:var(--cream);
+  font-family:"Noto Sans JP",sans-serif;
+  line-height:1.9;
 }
 button{font:inherit;cursor:pointer}
 header{
-  background:rgba(255,254,250,.96);
-  border-bottom:1px solid var(--line);
-  padding:18px 5%;
+  position:relative;
+  z-index:2;
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:15px;
-}
-.logo{
-  font-family:serif;
-  font-size:24px;
-  font-weight:bold;
-  letter-spacing:2px;
-}
-nav{display:flex;gap:22px;font-size:13px}
-nav a{color:var(--ink);text-decoration:none}
-.hero{
   max-width:1200px;
   margin:auto;
-  padding:65px 5% 45px;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  align-items:center;
-  gap:40px;
+  padding:23px 30px;
 }
-.eyebrow{
-  font-family:serif;
-  font-size:19px;
-  color:#8b7770;
-  letter-spacing:3px;
+.logo{
+  font-family:"Noto Serif JP",serif;
+  font-size:23px;
+  font-weight:600;
+  letter-spacing:.08em;
 }
-h1{
-  font-family:serif;
-  font-size:clamp(38px,5vw,66px);
-  line-height:1.4;
-  margin:15px 0;
-  font-weight:500;
+.logo span{color:var(--sage);font-size:18px}
+nav{display:flex;gap:28px}
+nav a{
+  color:var(--ink);
+  font-size:12px;
+  text-decoration:none;
+  letter-spacing:.08em;
 }
-.hero p{font-size:15px;color:var(--muted)}
-.main-btn{
-  background:var(--blue);
-  color:white;
-  border:0;
-  border-radius:40px;
-  padding:15px 32px;
-  margin-top:20px;
-}
-.illustration{
-  background:linear-gradient(135deg,#ede8df,#dfe9e4);
-  border-radius:48% 48% 35% 35%;
-  min-height:350px;
-  display:flex;
-  justify-content:center;
-  align-items:center;
+.hero{
   position:relative;
   overflow:hidden;
+  min-height:590px;
+  background:
+    linear-gradient(90deg,
+      rgba(249,248,243,.98) 0%,
+      rgba(249,248,243,.93) 36%,
+      rgba(249,248,243,.43) 100%),
+    url("https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1800&q=85")
+    center/cover;
 }
-.people{
-  font-size:105px;
-  letter-spacing:-18px;
-}
-.bubble{
-  position:absolute;
-  background:white;
-  padding:9px 17px;
-  border-radius:25px;
-  box-shadow:0 4px 15px #0000000b;
-  font-size:13px;
-}
-.b1{top:15%;left:8%}
-.b2{top:27%;right:6%}
-.b3{bottom:18%;left:14%}
-.categories{
-  max-width:1100px;
-  margin:0 auto 55px;
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:12px;
-  padding:0 15px;
-}
-.category{
-  background:white;
-  border:1px solid var(--line);
-  padding:12px 20px;
-  border-radius:35px;
-  font-size:14px;
-}
-.category.active{
-  background:#e1e9eb;
-  border-color:#a6bbc4;
-}
-.section{
-  max-width:1100px;
-  margin:0 auto 55px;
-  padding:0 18px;
-}
-.section h2{
-  font-family:serif;
-  font-weight:500;
-  font-size:27px;
-}
-.steps{
+.hero-inner{
+  position:relative;
+  max-width:1200px;
+  margin:auto;
+  padding:105px 30px 120px;
   display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:15px;
+  grid-template-columns:1.15fr 1fr;
+  gap:60px;
+  align-items:center;
 }
-.step{
-  background:white;
-  border-radius:20px;
-  padding:23px;
-  min-height:180px;
+.eyebrow{
+  color:var(--sage);
+  font-family:"Cormorant Garamond",serif;
+  font-size:20px;
+  letter-spacing:.14em;
 }
-.step:nth-child(1){background:#f2e9e6}
-.step:nth-child(2){background:#e8eff4}
-.step:nth-child(3){background:#e5efe8}
-.step:nth-child(4){background:#f3eddf}
-.num{
-  font-family:serif;
-  font-size:34px;
-  color:#78909a;
+h1,h2,h3{
+  font-family:"Noto Serif JP",serif;
+  font-weight:500;
 }
-.step strong{display:block;margin:7px 0}
-.step p{font-size:13px}
-.quiz{
-  max-width:720px;
-  margin:30px auto 70px;
-  padding:30px;
-  background:var(--paper);
-  border:1px solid var(--line);
-  border-radius:24px;
-  box-shadow:0 10px 35px #33333308;
+h1{
+  font-size:clamp(30px,3.5vw,49px);
+  line-height:1.65;
+  letter-spacing:.07em;
+  margin:18px 0 16px;
 }
-.tag{
+.lead{
+  font-family:"Noto Serif JP",serif;
+  font-size:21px;
+  letter-spacing:.12em;
+}
+.intro{
+  color:#68766c;
+  font-size:13px;
+  line-height:2.4;
+  margin:24px 0 32px;
+}
+.primary{
+  display:inline-block;
+  border:0;
+  border-radius:40px;
   background:var(--sage);
-  border-radius:20px;
-  padding:5px 13px;
-  font-size:12px;
+  color:white;
+  padding:14px 33px;
+  font-size:13px;
+  text-decoration:none;
+  letter-spacing:.06em;
+  box-shadow:0 8px 20px #526f5830;
 }
-.question{
-  font-size:22px;
-  font-weight:bold;
-  margin:23px 0;
+.poll{
+  padding:34px;
+  border:1px solid #ffffffcc;
+  border-radius:19px;
+  background:rgba(255,255,255,.87);
+  backdrop-filter:blur(12px);
+  box-shadow:0 20px 65px #3c504326;
 }
-.option{
+.poll-top{
+  color:var(--sage);
+  font-family:"Cormorant Garamond",serif;
+  font-size:23px;
+  letter-spacing:.05em;
+}
+.poll small{
   display:block;
-  width:100%;
-  background:white;
-  border:1px solid #d9dfdf;
-  padding:15px;
-  margin:10px 0;
-  border-radius:13px;
-  text-align:left;
+  color:var(--muted);
+  font-size:11px;
+  margin-top:3px;
 }
-.option.selected{
-  border:2px solid var(--blue);
-  background:#edf3f4;
+.poll h2{
+  font-size:22px;
+  line-height:1.7;
+  margin:20px 0 24px;
+}
+.choice{
+  width:100%;
+  padding:15px 18px;
+  margin-bottom:12px;
+  text-align:left;
+  color:var(--ink);
+  border:1px solid #dce5da;
+  background:#fbfcf9;
+  border-radius:10px;
+  transition:.2s;
+}
+.choice:hover{
+  background:#edf3eb;
+  border-color:var(--sage);
+}
+.choice:disabled{cursor:default}
+.result{
+  display:none;
+  padding:10px 0;
+}
+.result p{
+  font-size:13px;
+  margin:13px 0 6px;
 }
 .bar{
-  height:13px;
-  background:#e8ecec;
+  height:10px;
   border-radius:20px;
+  background:#e9eee8;
   overflow:hidden;
-  margin:5px 0 14px;
 }
 .fill{
   height:100%;
-  background:#819eab;
+  background:var(--sage);
   border-radius:20px;
 }
-.result{
-  display:none;
-  margin-top:25px;
+.note{
+  font-size:10px;
+  color:var(--muted);
+  margin-top:16px;
 }
-.notice{
+.again{
+  border:0;
+  background:none;
+  color:var(--sage);
+  text-decoration:underline;
+  margin-top:16px;
+  padding:0;
+  font-size:12px;
+}
+section.content{
+  max-width:1120px;
+  margin:auto;
+  padding:85px 24px;
+}
+.section-heading{
+  text-align:center;
+  margin-bottom:44px;
+}
+.section-heading .en{
+  color:var(--sage);
+  font-family:"Cormorant Garamond",serif;
+  font-size:23px;
+  letter-spacing:.12em;
+}
+.section-heading h2{
+  font-size:26px;
+  margin:6px 0 12px;
+  letter-spacing:.1em;
+}
+.section-heading p{
   color:var(--muted);
   font-size:12px;
 }
+.steps{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:22px;
+}
+.step{
+  padding:32px 25px;
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:13px;
+  text-align:center;
+}
+.step .number{
+  font-family:"Cormorant Garamond",serif;
+  color:var(--sage);
+  font-size:29px;
+}
+.step .symbol{
+  font-family:"Noto Serif JP",serif;
+  font-size:32px;
+  color:#9eaf9d;
+  margin:12px 0;
+}
+.step h3{font-size:17px;margin:8px 0}
+.step p{
+  color:var(--muted);
+  font-size:12px;
+  line-height:2;
+}
+.categories{
+  background:#eef1eb;
+  padding:78px 24px 85px;
+  text-align:center;
+}
+.category-list{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:12px;
+  max-width:780px;
+  margin:auto;
+}
+.category-list span{
+  border:1px solid #d7e0d4;
+  background:#fff;
+  border-radius:30px;
+  padding:11px 23px;
+  font-size:13px;
+}
 footer{
   text-align:center;
-  background:#e9ede9;
-  padding:35px;
-  font-size:13px;
-  color:#697471;
+  padding:35px 20px;
+  font-size:11px;
+  color:var(--muted);
 }
-@media(max-width:750px){
-  nav{display:none}
-  .hero{
+@media(max-width:760px){
+  header{padding:18px 20px}
+  .logo{font-size:19px}
+  nav{gap:13px}
+  nav a{font-size:10px}
+  .hero-inner{
     grid-template-columns:1fr;
-    padding-top:35px;
-    gap:25px;
+    gap:30px;
+    padding:65px 23px 75px;
   }
-  .illustration{min-height:250px}
-  .people{font-size:75px}
-  .steps{grid-template-columns:repeat(2,1fr)}
-  .quiz{margin:20px 15px 55px;padding:22px}
+  .hero{
+    background:
+      linear-gradient(rgba(249,248,243,.89),rgba(249,248,243,.83)),
+      url("https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1000&q=80")
+      center/cover;
+  }
+  h1{font-size:32px}
+  .lead{font-size:18px}
+  .poll{padding:26px 22px}
+  .steps{grid-template-columns:1fr}
+  section.content{padding:65px 22px}
 }
 </style>
 </head>
 <body>
-
 <header>
-  <div class="logo">みんなのホンネ</div>
+  <div class="logo">みんなのホンネ <span>✳</span></div>
   <nav>
-    <a href="#home">トップ</a>
-    <a href="#quiz">今日のホンネ</a>
-    <a href="#categories">カテゴリ</a>
-    <a href="#about">このサイトについて</a>
+    <a href="#question">今日の質問</a>
+    <a href="#howto">楽しみ方</a>
+    <a href="#categories">カテゴリー</a>
   </nav>
 </header>
 
-<main id="home">
+<main>
+  <div class="hero">
+    <div class="hero-inner">
+      <div>
+        <div class="eyebrow">Discover our differences</div>
+        <h1>私の常識は、<br>みんなの非常識？</h1>
+        <div class="lead">ちがうから、おもしろい。</div>
+        <p class="intro">
+          あなたの「あたりまえ」は、みんなも同じ？<br>
+          ちょっとした質問から見えてくる、<br>
+          いろんな人のホンネをのぞいてみよう。
+        </p>
+        <a class="primary" href="#question">今日の質問に答えてみる　→</a>
+      </div>
 
-<section class="hero">
-  <div>
-    <div class="eyebrow">ちがうから、おもしろい。</div>
-    <h1>みんなのホンネ</h1>
-    <h2>私の常識は、<br>みんなの非常識？</h2>
-    <p>
-      恋愛・仕事・お金・人間関係・日常のあれこれ。<br>
-      みんなのホンネを集めた参加型メディア。<br>
-      あなたは多数派？それとも少数派？
+      <div class="poll" id="question">
+        <div class="poll-top">Today's Question</div>
+        <small>今日の質問 · お試し版</small>
+        <h2 id="questionText">友達との旅行、別行動はあり？</h2>
+        <div id="choices">
+          <button class="choice" onclick="answer(0)">○ あり！自由な時間もほしい</button>
+          <button class="choice" onclick="answer(1)">○ なし！せっかくなら一緒がいい</button>
+        </div>
+        <div class="result" id="result">
+          <p id="selected"></p>
+          <p>あり派　<span id="percentA">62%</span></p>
+          <div class="bar"><div class="fill" id="barA" style="width:62%"></div></div>
+          <p>なし派　<span id="percentB">38%</span></p>
+          <div class="bar"><div class="fill" id="barB" style="width:38%;opacity:.5"></div></div>
+          <p class="note">※ 現在はデザイン確認用のサンプル結果です。実際の投票集計ではありません。</p>
+          <button class="again" onclick="nextQuestion()">次の質問を見てみる →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="content" id="howto">
+    <div class="section-heading">
+      <div class="en">How to Enjoy</div>
+      <h2>みんなのホンネの楽しみ方</h2>
+      <p>答えて、比べて、ちょっと発見。</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="number">01</div>
+        <div class="symbol">✎</div>
+        <h3>質問に答える</h3>
+        <p>日常のちょっと気になること。<br>あなたならどうする？</p>
+      </div>
+      <div class="step">
+        <div class="number">02</div>
+        <div class="symbol">◌</div>
+        <h3>みんなと比べる</h3>
+        <p>多数派？それとも少数派？<br>思いがけない発見があるかも。</p>
+      </div>
+      <div class="step">
+        <div class="number">03</div>
+        <div class="symbol">↗</div>
+        <h3>誰かと話してみる</h3>
+        <p>答えの違いをきっかけに、<br>会話をもっと楽しく。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="categories" id="categories">
+    <div class="section-heading">
+      <div class="en">Topics</div>
+      <h2>いろんなホンネをのぞいてみよう</h2>
+      <p>気になるテーマから、価値観の違いを楽しもう。</p>
+    </div>
+    <div class="category-list">
+      <span>恋愛・結婚</span>
+      <span>仕事・職場</span>
+      <span>お金・買い物</span>
+      <span>友達・人間関係</span>
+      <span>暮らし・日常</span>
+    </div>
+    <p style="font-size:11px;color:#78837b;margin-top:24px">
+      ※ カテゴリー別の質問は今後追加予定です。
     </p>
-    <button class="main-btn" onclick="goQuiz()">
-      今日のホンネに答えてみる →
-    </button>
-  </div>
-
-  <div class="illustration">
-    <span class="bubble b1">そうなんだ！</span>
-    <span class="bubble b2">えっ、意外！</span>
-    <div class="people">🧑🏻‍💻👩🏽‍💼👨🏻‍🦱</div>
-    <span class="bubble b3">わかる！</span>
-  </div>
-</section>
-
-<div class="categories" id="categories">
-  <button class="category active" onclick="chooseCategory('all',this)">すべて</button>
-  <button class="category" onclick="chooseCategory('恋愛',this)">♡ 恋愛</button>
-  <button class="category" onclick="chooseCategory('仕事',this)">▣ 仕事</button>
-  <button class="category" onclick="chooseCategory('お金',this)">◉ お金</button>
-  <button class="category" onclick="chooseCategory('日常',this)">⌂ 日常</button>
-  <button class="category" onclick="chooseCategory('人間関係',this)">♧ 人間関係</button>
-</div>
-
-<section class="section" id="about">
-  <h2>みんなのホンネの楽しみ方</h2>
-  <div class="steps">
-    <div class="step">
-      <div class="num">01</div>
-      <strong>気になる質問に答える</strong>
-      <p>日常のちょっとした疑問に気軽に回答。</p>
-    </div>
-    <div class="step">
-      <div class="num">02</div>
-      <strong>みんなの結果がわかる</strong>
-      <p>あなたは多数派？少数派？</p>
-    </div>
-    <div class="step">
-      <div class="num">03</div>
-      <strong>価値観の違いを楽しむ</strong>
-      <p>自分とは違う考え方を発見。</p>
-    </div>
-    <div class="step">
-      <div class="num">04</div>
-      <strong>友達とシェアする</strong>
-      <p>結果を共有して会話のきっかけに。</p>
-    </div>
-  </div>
-</section>
-
-<section class="quiz" id="quiz">
-  <span class="tag" id="tag">今日のホンネ</span>
-  <div class="question" id="question"></div>
-  <div id="options"></div>
-  <button class="main-btn" id="answerBtn" onclick="showResult()">
-    回答して結果を見る →
-  </button>
-  <div class="result" id="result"></div>
-</section>
-
+  </section>
 </main>
 
 <footer>
-  みんなのホンネ<br>
-  ちがうから、おもしろい。<br>
-  <small>© 2026 Minna no Honne</small>
+  みんなのホンネ — ちがうから、おもしろい。<br>
+  © 2026 みんなのホンネ
 </footer>
 
 <script>
 const questions=[
   {
-    category:"恋愛",
-    q:"恋人と毎日LINEするのは普通だと思う？",
-    options:["毎日連絡したい","時々でいい","用事がある時だけ"],
-    rates:[42,36,22]
+    q:"友達との旅行、別行動はあり？",
+    choices:["あり！自由な時間もほしい","なし！せっかくなら一緒がいい"],
+    labels:["あり派","なし派"],
+    results:[62,38]
   },
   {
-    category:"仕事",
-    q:"始業時間の何分前に出社する？",
-    options:["10分以上前","5〜10分前","時間ぎりぎり"],
-    rates:[35,40,25]
+    q:"仕事の始業時間、何分前に到着したい？",
+    choices:["余裕をもって10分以上前","ギリギリでも間に合えばOK"],
+    labels:["余裕派","ギリギリ派"],
+    results:[55,45]
   },
   {
-    category:"お金",
-    q:"友達との食事で1円単位の割り勘はあり？",
-    options:["あり","なし","場合による"],
-    rates:[18,49,33]
+    q:"恋人との連絡、毎日したい？",
+    choices:["毎日連絡を取りたい","必要なときだけでいい"],
+    labels:["毎日派","必要なとき派"],
+    results:[58,42]
   },
   {
-    category:"日常",
-    q:"バスタオルは毎日洗う？",
-    options:["毎日洗う","2〜3回使う","もっと使う"],
-    rates:[46,39,15]
-  },
-  {
-    category:"人間関係",
-    q:"友達との旅行で別行動はあり？",
-    options:["あり","なし","状況による"],
-    rates:[38,27,35]
+    q:"友達との食事、割り勘は1円単位まで？",
+    choices:["きっちり分けたい","ざっくりでいい"],
+    labels:["きっちり派","ざっくり派"],
+    results:[24,76]
   }
 ];
-
-let filtered=[...questions];
-let index=0;
-let selected=-1;
-
-function goQuiz(){
-  document.getElementById("quiz").scrollIntoView({
-    behavior:"smooth"
-  });
-}
-
-function chooseCategory(cat,button){
-  document.querySelectorAll(".category").forEach(b=>{
-    b.classList.remove("active");
-  });
-  button.classList.add("active");
-
-  filtered=cat==="all"
-    ? [...questions]
-    : questions.filter(q=>q.category===cat);
-
-  index=0;
-  renderQuestion();
-  goQuiz();
-}
-
+let current=0;
 function renderQuestion(){
-  selected=-1;
-  const q=filtered[index];
-
-  document.getElementById("tag").textContent=
-    q.category+"｜"+(index+1)+"/"+filtered.length;
-
-  document.getElementById("question").textContent=q.q;
-
+  const q=questions[current];
+  document.getElementById("questionText").textContent=q.q;
+  document.getElementById("choices").innerHTML=q.choices.map(
+    (c,i)=>'<button class="choice" onclick="answer('+i+')">○ '+c+'</button>'
+  ).join("");
+  document.getElementById("choices").style.display="block";
   document.getElementById("result").style.display="none";
-  document.getElementById("answerBtn").style.display="inline-block";
-
-  document.getElementById("options").innerHTML=
-    q.options.map((o,i)=>
-      '<button class="option" onclick="selectOption('+i+')">'+
-      o+'</button>'
-    ).join("");
 }
-
-function selectOption(i){
-  selected=i;
-  document.querySelectorAll(".option").forEach((b,n)=>{
-    b.classList.toggle("selected",n===i);
-  });
-}
-
-function showResult(){
-  if(selected<0){
-    alert("回答を選んでね！");
-    return;
-  }
-
-  const q=filtered[index];
-  const rate=q.rates[selected];
-  const max=Math.max(...q.rates);
-  const isMajor=rate===max;
-
-  let html=
-    '<h3>あなたは'+
-    (isMajor?"多数派！":"少数派！")+
-    '</h3>'+
-    '<p>あなたと同じ回答は '+rate+'％</p>';
-
-  q.options.forEach((o,i)=>{
-    html+='<div>'+o+'：'+q.rates[i]+'％</div>'+
-      '<div class="bar"><div class="fill" style="width:'+
-      q.rates[i]+'%"></div></div>';
-  });
-
-  html+='<p class="notice">※試作品のため、割合はサンプルデータです。実際の投票結果ではありません。</p>';
-
-  html+='<button class="main-btn" onclick="nextQuestion()">次の質問へ →</button>';
-
-  document.getElementById("result").innerHTML=html;
+function answer(index){
+  const q=questions[current];
+  document.getElementById("selected").textContent=
+    "あなたの回答：「"+q.choices[index]+"」";
+  document.querySelectorAll("#result p")[1].firstChild.textContent=q.labels[0]+"　";
+  document.querySelectorAll("#result p")[2].firstChild.textContent=q.labels[1]+"　";
+  document.getElementById("percentA").textContent=q.results[0]+"%";
+  document.getElementById("percentB").textContent=q.results[1]+"%";
+  document.getElementById("barA").style.width=q.results[0]+"%";
+  document.getElementById("barB").style.width=q.results[1]+"%";
+  document.getElementById("choices").style.display="none";
   document.getElementById("result").style.display="block";
-  document.getElementById("answerBtn").style.display="none";
 }
-
 function nextQuestion(){
-  index=(index+1)%filtered.length;
+  current=(current+1)%questions.length;
   renderQuestion();
 }
-
-renderQuestion();
 </script>
-
 </body>
 </html>
