@@ -273,31 +273,67 @@ footer{
 }.mobile-photo {
   display: none;
 }
-@media(max-width:760px)
-  .mobile-photo {
-  display: block;
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  background: url("mainphoto.png") center center / cover no-repeat;
-}{
-  header{padding:18px 20px}
-  .logo{font-size:19px}
-  nav{gap:13px}
-  nav a{font-size:10px}
+@media(max-width:760px){
+
+  .mobile-photo{
+    display:block;
+    width:100%;
+    aspect-ratio:16/9;
+    background:url("mainphoto.png") center/cover no-repeat;
+  }
+
+  header{
+    padding:18px 20px;
+  }
+
+  .logo{
+    font-size:19px;
+  }
+
+  nav{
+    gap:13px;
+  }
+
+  nav a{
+    font-size:10px;
+  }
+
+  .hero{
+    background:var(--cream);
+    min-height:auto;
+  }
+
   .hero-inner{
+    display:grid;
+    grid-template-columns:minmax(0,1fr);
+    gap:24px;
+    padding:30px 20px 55px;
+  }
+
+  .hero-inner > div{
+    min-width:0;
+  }
+
+  h1{
+    font-size:32px;
+  }
+
+  .lead{
+    font-size:18px;
+  }
+
+  .poll{
+    padding:26px 22px;
+  }
+
+  .steps{
     grid-template-columns:1fr;
-    gap:30px;
-    padding:65px 23px 75px;
   }
-  .hero {
-  background: var(--cream);
-}
+
+  section.content{
+    padding:65px 22px;
   }
-  h1{font-size:32px}
-  .lead{font-size:18px}
-  .poll{padding:26px 22px}
-  .steps{grid-template-columns:1fr}
-  section.content{padding:65px 22px}
+
 }
 </style>
 </head>
