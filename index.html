@@ -474,9 +474,8 @@ function answer(index) {
   document.getElementById("selected").textContent =
     "あなたの回答：「" + q.choices[index] + "」";
 
-  const paragraphs = document.querySelectorAll("#result p");
-  paragraphs[1].firstChild.textContent = q.labels[0] + "　";
-  paragraphs[2].firstChild.textContent = q.labels[1] + "　";
+  document.querySelector("#result p:nth-of-type(2)").firstChild.textContent = q.labels[0] + "　";
+document.querySelector("#result p:nth-of-type(3)").firstChild.textContent = q.labels[1] + "　";
 
   document.getElementById("percentA").textContent = q.results[0] + "%";
   document.getElementById("percentB").textContent = q.results[1] + "%";
